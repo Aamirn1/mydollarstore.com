@@ -68,7 +68,7 @@ const TrustIconAnimated = ({ type }: { type: string }) => {
 };
 
 const trustItems = [
-  { type: 'truck', title: 'Free Shipping', desc: 'On orders over $99' },
+  { type: 'truck', title: 'Free Shipping', desc: 'On orders over PKR 15,000' },
   { type: 'shield', title: 'Secure Payment', desc: '100% safe & encrypted' },
   { type: 'returns', title: 'Easy Returns', desc: '30-day return policy' },
   { type: 'support', title: 'Expert Support', desc: 'Drone specialists 24/7' },

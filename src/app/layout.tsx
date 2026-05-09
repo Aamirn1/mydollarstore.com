@@ -18,7 +18,7 @@ const orbitron = Orbitron({
 export const metadata: Metadata = {
   title: "My Dollar Store — Premium Drones at Unbeatable Prices",
   description:
-    "🚁 Shop professional camera drones, racing quads & beginner flyers from just $29. Free shipping on orders over $99. 30-day easy returns. Expert 24/7 support. Elevate your perspective today!",
+    "🚁 Shop professional camera drones, racing quads & beginner flyers from just PKR 199. Free shipping on orders over PKR 15,000. 30-day easy returns. Expert 24/7 support. Elevate your perspective today!",
   keywords: [
     "drones", "camera drones", "racing drones", "FPV drones", "mini drones",
     "affordable drones", "drone store", "buy drones online", "cheap drones",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "My Dollar Store — Elevate Your Perspective 🚁",
     description:
-      "Professional drones starting from just $29. Camera drones, racing quads & mini flyers with free shipping over $99. 30-day returns. Shop now!",
+      "Professional drones starting from just PKR 199. Camera drones, racing quads & mini flyers with free shipping over PKR 15,000. 30-day returns. Shop now!",
     type: "website",
     url: "https://mydollarstore.com",
     siteName: "My Dollar Store",
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "My Dollar Store — Premium Drones from $29 🚁",
+    title: "My Dollar Store — Premium Drones from PKR 199 🚁",
     description:
-      "Camera drones, racing quads & mini flyers. Free shipping over $99. 30-day returns. Elevate your perspective!",
+      "Camera drones, racing quads & mini flyers. Free shipping over PKR 15,000. 30-day returns. Elevate your perspective!",
     images: ["/og-image.png"],
   },
   robots: {

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, X } from 'lucide-react';
 import { useProductStore } from '@/store/product-store';
 import { useRouterStore } from '@/store/router-store';
+import { formatPrice } from '@/lib/utils';
 
 interface SearchOverlayProps {
   isOpen: boolean;
@@ -98,7 +99,7 @@ const SearchOverlay = ({ isOpen, onClose }: SearchOverlayProps) => {
                         <p className="font-heading text-sm font-semibold truncate">{product.name}</p>
                         <p className="text-xs text-muted-foreground font-sans">{product.brand} · {product.categorySlug.replace('-', ' ')}</p>
                       </div>
-                      <p className="text-primary font-sans text-sm font-semibold shrink-0">${product.price.toFixed(2)}</p>
+                      <p className="text-primary font-sans text-sm font-semibold shrink-0">{formatPrice(product.price)}</p>
                     </button>
                   ))}
                 </div>

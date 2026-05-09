@@ -32,6 +32,7 @@ import {
   Pie,
   Cell,
 } from 'recharts';
+import { formatPrice } from '@/lib/utils';
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -351,7 +352,7 @@ const AdminView = () => {
   };
 
   /* ---- Format helpers ---- */
-  const fmtPrice = (n: number) => `$${n.toFixed(2)}`;
+  const fmtPrice = formatPrice;
   const fmtDate = (d: string) => new Date(d).toLocaleDateString();
 
   /* ================================================================== */

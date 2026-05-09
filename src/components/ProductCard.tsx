@@ -5,12 +5,11 @@ import { ShoppingBag, Star } from 'lucide-react';
 import { useCartStore } from '@/store/cart-store';
 import { useRouterStore } from '@/store/router-store';
 import { useProductStore, type Product } from '@/store/product-store';
+import { formatPrice } from '@/lib/utils';
 
 const ProductCard = ({ product }: { product: Product }) => {
   const { addItem } = useCartStore();
   const { navigate } = useRouterStore();
-
-  const formatPrice = (price: number) => `$${price.toFixed(2)}`;
 
   const discount = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)

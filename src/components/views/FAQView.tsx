@@ -20,7 +20,7 @@ const faqItems = [
   },
   {
     question: 'How long does shipping take?',
-    answer: 'Standard shipping takes 3-7 business days. Express shipping (1-3 business days) is available for an additional fee. Orders over $99 qualify for free standard shipping. We ship to all 50 US states and select international destinations.',
+    answer: 'Standard shipping takes 3-7 business days. Express shipping (1-3 business days) is available for an additional fee. Orders over PKR 15,000 qualify for free standard shipping. We deliver across Pakistan.',
   },
   {
     question: 'Do your drones come with warranties?',

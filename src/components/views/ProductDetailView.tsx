@@ -8,6 +8,7 @@ import { useProductStore, type Product } from '@/store/product-store';
 import { useCartStore } from '@/store/cart-store';
 import { Button } from '@/components/ui/button';
 import ProductCard from '@/components/ProductCard';
+import { formatPrice } from '@/lib/utils';
 
 const ProductDetailInner = ({ product, related }: { product: Product; related: Product[] }) => {
   const { navigate, goBack } = useRouterStore();
@@ -15,7 +16,6 @@ const ProductDetailInner = ({ product, related }: { product: Product; related: P
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
 
-  const formatPrice = (price: number) => `$${price.toFixed(2)}`;
   const discount = product.originalPrice
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0;

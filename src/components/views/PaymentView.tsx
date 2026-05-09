@@ -5,6 +5,7 @@ import { ArrowLeft, Copy, Upload } from 'lucide-react';
 import { useRouterStore } from '@/store/router-store';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import { formatPrice } from '@/lib/utils';
 
 const PaymentView = () => {
   const { route, navigate, goBack } = useRouterStore();
@@ -52,17 +53,17 @@ const PaymentView = () => {
           <h2 className="font-heading text-lg font-semibold mb-4">Payment Details</h2>
           <div className="text-center mb-6">
             <p className="text-muted-foreground font-sans text-sm">Amount to Pay</p>
-            <p className="font-heading text-4xl font-bold text-primary">${amount.toFixed(2)}</p>
+            <p className="font-heading text-4xl font-bold text-primary">{formatPrice(amount)}</p>
           </div>
 
           <div className="border-t border-border pt-4">
             <h3 className="font-heading text-sm font-semibold mb-3">Bank Transfer Details</h3>
             <div className="space-y-3">
               {[
-                { label: 'Bank', value: 'First National Bank' },
-                { label: 'Account Name', value: 'My Dollar Store LLC' },
-                { label: 'Account Number', value: '1234-5678-9012-3456' },
-                { label: 'Routing Number', value: '021000021' },
+                { label: 'Bank', value: 'JazzCash / EasyPaisa' },
+                { label: 'Account Name', value: 'My Dollar Store' },
+                { label: 'Account Number', value: '0328-4872550' },
+                { label: 'IBAN', value: 'PK36ABCD00000003284872550' },
                 { label: 'Reference', value: `ORDER-${orderId.slice(-8)}` },
               ].map((item) => (
                 <div key={item.label} className="flex items-center justify-between bg-secondary/50 rounded px-4 py-2.5">

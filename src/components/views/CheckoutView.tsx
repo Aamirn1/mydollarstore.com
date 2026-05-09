@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import { formatPrice } from '@/lib/utils';
 
 const CheckoutView = () => {
   const { navigate, goBack } = useRouterStore();
@@ -29,7 +30,7 @@ const CheckoutView = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const subtotal = getTotal();
-  const shipping = subtotal > 99 ? 0 : 9.99;
+  const shipping = subtotal > 15000 ? 0 : 250;
   const total = subtotal + shipping;
   const advanceAmount = total * 0.25;
   const remainingAmount = total - advanceAmount;
@@ -221,7 +222,7 @@ const CheckoutView = () => {
                     }`}
                   >
                     <p className="font-heading text-sm font-semibold">Full Payment</p>
-                    <p className="text-xs text-muted-foreground font-sans mt-1">${total.toFixed(2)}</p>
+                    <p className="text-xs text-muted-foreground font-sans mt-1">{formatPrice(total)}</p>
                   </button>
                   <button
                     onClick={() => setPaymentMethod('advance')}
@@ -232,7 +233,7 @@ const CheckoutView = () => {
                     }`}
                   >
                     <p className="font-heading text-sm font-semibold">25% Advance</p>
-                    <p className="text-xs text-muted-foreground font-sans mt-1">${advanceAmount.toFixed(2)} now</p>
+                    <p className="text-xs text-muted-foreground font-sans mt-1">{formatPrice(advanceAmount)} now</p>
                   </button>
                 </div>
               </div>
@@ -255,27 +256,27 @@ const CheckoutView = () => {
                       <p className="font-heading text-xs font-semibold truncate">{item.name}</p>
                       <p className="text-xs text-muted-foreground font-sans">Qty: {item.quantity}</p>
                     </div>
-                    <p className="text-sm font-sans font-semibold">${(item.price * item.quantity).toFixed(2)}</p>
+                    <p className="text-sm font-sans font-semibold">{formatPrice(item.price * item.quantity)}</p>
                   </div>
                 ))}
               </div>
               <div className="border-t border-border pt-3 space-y-2">
                 <div className="flex justify-between text-sm font-sans">
                   <span className="text-muted-foreground">Subtotal</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>{formatPrice(subtotal)}</span>
                 </div>
                 <div className="flex justify-between text-sm font-sans">
                   <span className="text-muted-foreground">Shipping</span>
-                  <span>{shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`}</span>
+                  <span>{shipping === 0 ? 'Free' : formatPrice(shipping)}</span>
                 </div>
                 <div className="flex justify-between font-heading font-bold text-lg pt-2 border-t border-border">
                   <span>Total</span>
-                  <span className="text-primary">${total.toFixed(2)}</span>
+                  <span className="text-primary">{formatPrice(total)}</span>
                 </div>
                 {paymentMethod === 'advance' && (
                   <div className="text-xs text-muted-foreground font-sans">
-                    <p>Pay now: <span className="text-primary font-semibold">${advanceAmount.toFixed(2)}</span></p>
-                    <p>Remaining: ${remainingAmount.toFixed(2)} (on delivery)</p>
+                    <p>Pay now: <span className="text-primary font-semibold">{formatPrice(advanceAmount)}</span></p>
+                    <p>Remaining: {formatPrice(remainingAmount)} (on delivery)</p>
                   </div>
                 )}
               </div>
@@ -284,7 +285,7 @@ const CheckoutView = () => {
                 disabled={isSubmitting}
                 className="w-full mt-6 bg-accent-gradient text-primary-foreground font-sans tracking-widest uppercase text-sm py-6 btn-tech-glow disabled:opacity-50"
               >
-                {isSubmitting ? 'Placing Order...' : `Pay $${amountToPay.toFixed(2)}`}
+                {isSubmitting ? 'Placing Order...' : `Pay ${formatPrice(amountToPay)}`}
               </Button>
             </div>
           </motion.div>

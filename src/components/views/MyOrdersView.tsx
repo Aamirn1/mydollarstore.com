@@ -7,6 +7,7 @@ import { useRouterStore } from '@/store/router-store';
 import { useAuthStore } from '@/store/auth-store';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { formatPrice } from '@/lib/utils';
 
 interface OrderItem {
   name: string;
@@ -133,7 +134,7 @@ const MyOrdersView = () => {
                       Order #{order.id.slice(-8)}
                     </p>
                     <p className="text-xs text-muted-foreground font-sans mt-1">
-                      {new Date(order.createdAt).toLocaleDateString()} · ${order.subtotal.toFixed(2)}
+                      {new Date(order.createdAt).toLocaleDateString()} · {formatPrice(order.subtotal)}
                     </p>
                   </div>
                   <div className="flex items-center gap-3">
@@ -159,7 +160,7 @@ const MyOrdersView = () => {
                             <p className="font-sans text-sm">{item.name}</p>
                             <p className="text-xs text-muted-foreground font-sans">Qty: {item.quantity}</p>
                           </div>
-                          <p className="font-sans text-sm font-semibold">${(item.price * item.quantity).toFixed(2)}</p>
+                          <p className="font-sans text-sm font-semibold">{formatPrice(item.price * item.quantity)}</p>
                         </div>
                       ))}
                       {order.trackingNumber && (
