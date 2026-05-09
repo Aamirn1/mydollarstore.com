@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   authors: [{ name: "My Dollar Store" }],
   icons: {
     icon: "/logo.svg",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "My Dollar Store - Premium Drones",
