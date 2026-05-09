@@ -22,6 +22,7 @@ import PrivacyView from '@/components/views/PrivacyView';
 import TermsView from '@/components/views/TermsView';
 import ReturnsView from '@/components/views/ReturnsView';
 import AdminView from '@/components/views/AdminView';
+import FloatingButtons from '@/components/FloatingButtons';
 
 export default function Page() {
   const { route } = useRouterStore();
@@ -81,6 +82,7 @@ export default function Page() {
         {renderView()}
       </main>
       {!isAdmin && <Footer />}
+      {!isAdmin && <FloatingButtons />}
     </div>
   );
 }

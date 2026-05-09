@@ -95,7 +95,7 @@ const TrustPanel = () => {
               >
                 <TrustIconAnimated type={item.type} />
               </motion.div>
-              <h3 className="font-heading text-base font-semibold mb-1">{item.title}</h3>
+              <h3 className="font-heading text-sm sm:text-base font-semibold mb-1 whitespace-nowrap">{item.title}</h3>
               <p className="text-xs text-muted-foreground font-sans">{item.desc}</p>
             </motion.div>
           ))}
