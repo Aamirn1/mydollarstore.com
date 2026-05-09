@@ -16,23 +16,49 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "My Dollar Store - Premium Drones at Unbeatable Prices",
-  description: "Your one-stop shop for camera drones, racing drones, beginner drones, and mini drones. Quality tech at dollar store prices.",
-  keywords: ["drones", "camera drones", "racing drones", "FPV", "mini drones", "affordable drones", "drone store"],
+  title: "My Dollar Store — Premium Drones at Unbeatable Prices",
+  description:
+    "🚁 Shop professional camera drones, racing quads & beginner flyers from just $29. Free shipping on orders over $99. 30-day easy returns. Expert 24/7 support. Elevate your perspective today!",
+  keywords: [
+    "drones", "camera drones", "racing drones", "FPV drones", "mini drones",
+    "affordable drones", "drone store", "buy drones online", "cheap drones",
+    "professional drones", "beginner drones", "drone deals", "quadcopter",
+  ],
   authors: [{ name: "My Dollar Store" }],
+  creator: "My Dollar Store",
+  publisher: "My Dollar Store",
+  metadataBase: new URL("https://mydollarstore.com"),
   icons: {
     icon: "/logo.svg",
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "My Dollar Store - Premium Drones",
-    description: "Quality tech at unbeatable prices. Shop camera, racing, and mini drones.",
+    title: "My Dollar Store — Elevate Your Perspective 🚁",
+    description:
+      "Professional drones starting from just $29. Camera drones, racing quads & mini flyers with free shipping over $99. 30-day returns. Shop now!",
     type: "website",
+    url: "https://mydollarstore.com",
+    siteName: "My Dollar Store",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "My Dollar Store — Premium Drones at Unbeatable Prices",
+      },
+    ],
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "My Dollar Store - Premium Drones",
-    description: "Quality tech at unbeatable prices.",
+    title: "My Dollar Store — Premium Drones from $29 🚁",
+    description:
+      "Camera drones, racing quads & mini flyers. Free shipping over $99. 30-day returns. Elevate your perspective!",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
