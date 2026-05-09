@@ -18,12 +18,13 @@ const FloatingButtons = () => {
   };
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/1234567890', '_blank', 'noopener,noreferrer');
+    window.open('https://wa.me/923284872550', '_blank', 'noopener,noreferrer');
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
-      {/* WhatsApp Button */}
+    <>
+    {/* WhatsApp - Bottom Right */}
+    <div className="fixed bottom-6 right-6 z-50">
       <motion.button
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -36,8 +37,10 @@ const FloatingButtons = () => {
       >
         <MessageCircle size={24} fill="white" />
       </motion.button>
+    </div>
 
-      {/* Scroll to Top Button */}
+    {/* Scroll to Top - Bottom Left */}
+    <div className="fixed bottom-6 left-6 z-50">
       <AnimatePresence>
         {showScrollTop && (
           <motion.button
@@ -48,14 +51,15 @@ const FloatingButtons = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={scrollToTop}
-            className="w-12 h-12 rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/30 flex items-center justify-center hover:bg-primary/90 transition-colors"
+            className="w-9 h-9 rounded-full bg-primary text-primary-foreground shadow-md shadow-primary/25 flex items-center justify-center hover:bg-primary/90 transition-colors"
             aria-label="Scroll to top"
           >
-            <ArrowUp size={22} />
+            <ArrowUp size={16} />
           </motion.button>
         )}
       </AnimatePresence>
     </div>
+    </>
   );
 };
 
