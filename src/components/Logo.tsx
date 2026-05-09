@@ -7,9 +7,9 @@ interface LogoProps {
 
 const Logo = ({ className = '', size = 'md' }: LogoProps) => {
   const sizeClasses = {
-    sm: 'text-lg',
-    md: 'text-lg sm:text-xl lg:text-2xl whitespace-nowrap',
-    lg: 'text-2xl lg:text-3xl',
+    sm: 'text-sm sm:text-base tracking-wider',
+    md: 'text-sm sm:text-lg lg:text-xl tracking-wide sm:tracking-wider whitespace-nowrap',
+    lg: 'text-xl lg:text-3xl tracking-wider',
   };
 
   return (
@@ -19,7 +19,7 @@ const Logo = ({ className = '', size = 'md' }: LogoProps) => {
       aria-label="My Dollar Store - Home"
     >
       <span
-        className={`font-heading font-bold tracking-wider ${sizeClasses[size]} text-accent-gradient`}
+        className={`font-heading font-bold ${sizeClasses[size]} text-accent-gradient`}
         style={{ textShadow: '0 0 40px oklch(0.72 0.19 195 / 0.5)' }}
       >
         MY DOLLAR STORE
