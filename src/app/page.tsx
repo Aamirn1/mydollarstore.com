@@ -35,6 +35,11 @@ export default function Page() {
     checkAuth();
   }, [fetchProducts, fetchCategories, checkAuth]);
 
+  // Scroll to top whenever route changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [route.page]);
+
   const isAdmin = route.page === 'admin';
 
   const renderView = () => {

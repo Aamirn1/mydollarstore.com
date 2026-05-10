@@ -39,7 +39,7 @@ export const useRouterStore = create<RouterStore>()((set, get) => ({
     }));
     // Scroll to top on navigation
     if (typeof window !== 'undefined') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
   },
 

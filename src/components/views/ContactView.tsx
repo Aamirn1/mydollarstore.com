@@ -113,14 +113,14 @@ const ContactView = () => {
                   <Mail size={20} className="text-primary shrink-0 mt-0.5" />
                   <div>
                     <p className="font-sans text-sm font-semibold">Email</p>
-                    <p className="text-muted-foreground font-sans text-sm">support@mydollarstore.com</p>
+                    <a href="mailto:support@mydollarstore.com" className="text-muted-foreground hover:text-primary font-sans text-sm transition-colors">support@mydollarstore.com</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Phone size={20} className="text-primary shrink-0 mt-0.5" />
                   <div>
-                    <p className="font-sans text-sm font-semibold">Phone</p>
-                    <p className="text-muted-foreground font-sans text-sm">+1 (555) 123-4567</p>
+                    <p className="font-sans text-sm font-semibold">Phone / WhatsApp</p>
+                    <a href="https://wa.me/923284872550" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary font-sans text-sm transition-colors">+92 328 4872550</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -128,8 +128,8 @@ const ContactView = () => {
                   <div>
                     <p className="font-sans text-sm font-semibold">Address</p>
                     <p className="text-muted-foreground font-sans text-sm">
-                      123 Tech Avenue<br />
-                      Silicon Valley, CA 94025
+                      Rawalpindi, Punjab<br />
+                      Pakistan
                     </p>
                   </div>
                 </div>
@@ -140,16 +140,12 @@ const ContactView = () => {
               <h2 className="font-heading text-lg font-semibold mb-2">Business Hours</h2>
               <div className="space-y-1 text-sm font-sans">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Monday - Friday</span>
-                  <span>9:00 AM - 6:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Saturday</span>
-                  <span>10:00 AM - 4:00 PM</span>
+                  <span className="text-muted-foreground">Monday - Saturday</span>
+                  <span>10:00 AM - 8:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Sunday</span>
-                  <span className="text-muted-foreground">Closed</span>
+                  <span>12:00 PM - 6:00 PM</span>
                 </div>
               </div>
             </div>
